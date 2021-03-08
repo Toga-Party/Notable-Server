@@ -2,7 +2,7 @@ Wand==0.6.5
 silence_tensorflow==1.1.1
 Flask==1.1.2
 imutils==0.5.4
-tensorflow==2.4.0
+tensorflow-cpu==2.4.0
 matplotlib==3.3.2
 scikit-image==0.17.2
 numpy==1.19.2
