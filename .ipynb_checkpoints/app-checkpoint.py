@@ -15,7 +15,7 @@ from PIL import ImageDraw
 import silence_tensorflow.auto
 from melody import generateWAV
 from segmenter.slicer import Slice
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 from flask import Flask,request,send_from_directory,render_template,flash,redirect,url_for,send_file,jsonify
 from apputil import normalize, resize, sparse_tensor_to_strs, elements, allowed_file, compress
 
@@ -30,7 +30,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = "key"
 
 
-run_with_ngrok(app)
+#run_with_ngrok(app)
 model = ML(config.model,config.voc_file,config.input_dir,
            config.slice_dir,config.classification,config.seq)
 session = model.setup()
@@ -55,8 +55,6 @@ def test_output():
     app.logger.info('TEST: headers')
     app.logger.info(request.headers)
     app.logger.info('TEST: success')
-#     return send_from_directory(app.config['UPLOAD_FOLDER'],
-#                                "archive.zip", as_attachment=True)
     return jsonify(success=1,error="none",error_type="")
 
 
@@ -91,11 +89,9 @@ def predict():
             try:
                 np_img = np.array(img)
                 print(np_img.shape)
-#                 gry_img = cv2.cvtColor(cv_img, cv2.COLOR_BGR2GRAY)
                 cv_img = cv2.cvtColor(np_img, cv2.COLOR_RGB2GRAY)
                 save = np.array(cv_img)
                 cv2.imwrite('test0.jpg', save)
-                #gry_img = cv2.cvtColor(cv_img, cv2.COLOR_BGR2GRAY)
             except Exception as e:
                 app.logger.error("ERROR: conversion error")
                 app.logger.error("".join(traceback.TracebackException.from_exception(e).format()))

@@ -15,7 +15,7 @@ from PIL import ImageDraw
 import silence_tensorflow.auto
 from melody import generateWAV
 from segmenter.slicer import Slice
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 from flask import Flask,request,send_from_directory,render_template,flash,redirect,url_for,send_file,jsonify
 from apputil import normalize, resize, sparse_tensor_to_strs, elements, allowed_file, compress
 
@@ -30,7 +30,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = "key"
 
 
-run_with_ngrok(app)
+#run_with_ngrok(app)
 model = ML(config.model,config.voc_file,config.input_dir,
            config.slice_dir,config.classification,config.seq)
 session = model.setup()
