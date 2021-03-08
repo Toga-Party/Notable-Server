@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
 # In[ ]:
-
-
 import silence_tensorflow.auto
 import time
 import traceback
