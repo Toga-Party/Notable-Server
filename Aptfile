@@ -2,6 +2,6 @@ libsm6
 libxrender1
 libfontconfig1
 libice6
-python-opencv
+libgl1-mesa-glx
 ffmpeg
 libxext6
