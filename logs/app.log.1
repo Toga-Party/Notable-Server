@@ -1,210 +1,145 @@
-2021-03-03 20:40:10,864 - app - INFO - File: exists | Format: matching
-2021-03-03 20:41:38,608 - app - INFO - All processes completed: 87.62974309921265
-2021-03-03 20:44:56,041 - app - INFO - POST: success
-2021-03-03 20:44:56,041 - app - INFO - # of files in request: 1
-2021-03-03 20:44:56,041 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 26207
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=4167cd26-170e-486f-911c-4ee01026bdd2
-X-Forwarded-For: 180.191.234.173
-X-Forwarded-Proto: https
+2021-03-08 16:03:58,390 - app - ERROR - Traceback (most recent call last):
+  File "app.py", line 101, in predict
+    all_predictions = model.predict(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\ml_model.py", line 58, in predict
+    segmented_staves = Slice(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\slicer.py", line 63, in Slice
+    ret, mat = binarize_image(im_np)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\commonfunctions.py", line 65, in binarize_image
+    mat = cv2.imdecode(img, cv2.IMREAD_UNCHANGED)
+cv2.error: OpenCV(4.4.0) C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-h4wtvo23\opencv\modules\imgcodecs\src\loadsave.cpp:755: error: (-215:Assertion failed) buf.checkVector(1, CV_8U) > 0 in function 'cv::imdecode_'
+
+
+2021-03-08 16:16:16,779 - app - INFO - POST: success
+2021-03-08 16:16:16,880 - app - INFO - # of files in request: 1
+2021-03-08 16:16:16,880 - app - INFO - Host: localhost:5000
+Connection: keep-alive
+Content-Length: 25985
+Cache-Control: max-age=0
+Sec-Ch-Ua: "Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Upgrade-Insecure-Requests: 1
+Origin: http://localhost:5000
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryEvGAk70hY9aWbyMB
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: username-localhost-8889="2|1:0|10:1613749685|23:username-localhost-8889|44:ZDM3ZDc3YTUyNDE1NDFlMWE2ZmMyNmU1YTgwZWZmNGM=|99d0c6ad14108bd322ecb8bc116a3d6824612c71539e7642e77cba935b5c810c"; _xsrf=2|9e09c60d|671b43550472c70a2c60012cbf10b0db|1614128792; username-localhost-8888="2|1:0|10:1615191233|23:username-localhost-8888|44:YzA0MTlkYjljOWI3NGFhM2IxMzcyOWVlMzhlMTk3MmY=|49f62b86b13ed3262e436a052de578ad1c5bf0a75346ce1145db32f5c562aee0"
 
 
-2021-03-03 20:44:56,041 - app - INFO - File: exists
-2021-03-03 20:44:56,042 - app - INFO - File: name = happybday.PNG
-2021-03-03 20:44:56,042 - app - INFO - File: exists | Format: matching
-2021-03-03 20:45:27,809 - app - INFO - All processes completed: 31.76444363594055
-2021-03-03 20:49:56,034 - app - INFO - POST: success
-2021-03-03 20:49:56,034 - app - INFO - # of files in request: 1
-2021-03-03 20:49:56,035 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 900848
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=63516857-4469-46b2-b41e-dccd0f2c4ea5
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
+2021-03-08 16:16:16,881 - app - INFO - File: exists
+2021-03-08 16:16:16,881 - app - INFO - File: name = happybday.PNG
+2021-03-08 16:16:16,881 - app - INFO - File: exists | Format: matching
+2021-03-08 16:16:19,926 - app - ERROR - ERROR: prediction exceptionExpected Ptr<cv::UMat> for argument 'buf'
+2021-03-08 16:16:20,162 - app - ERROR - Traceback (most recent call last):
+  File "app.py", line 101, in predict
+    all_predictions = model.predict(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\ml_model.py", line 58, in predict
+    segmented_staves = Slice(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\slicer.py", line 63, in Slice
+    ret, mat = binarize_image(pill)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\commonfunctions.py", line 65, in binarize_image
+    mat = cv2.imdecode(img, cv2.IMREAD_UNCHANGED)
+TypeError: Expected Ptr<cv::UMat> for argument 'buf'
+
+2021-03-08 16:32:02,035 - app - INFO - POST: success
+2021-03-08 16:32:02,172 - app - INFO - # of files in request: 1
+2021-03-08 16:32:02,172 - app - INFO - Host: localhost:5000
+Connection: keep-alive
+Content-Length: 25985
+Cache-Control: max-age=0
+Sec-Ch-Ua: "Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Upgrade-Insecure-Requests: 1
+Origin: http://localhost:5000
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryUlMMeCS4muwIWrOC
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: username-localhost-8889="2|1:0|10:1613749685|23:username-localhost-8889|44:ZDM3ZDc3YTUyNDE1NDFlMWE2ZmMyNmU1YTgwZWZmNGM=|99d0c6ad14108bd322ecb8bc116a3d6824612c71539e7642e77cba935b5c810c"; _xsrf=2|9e09c60d|671b43550472c70a2c60012cbf10b0db|1614128792; username-localhost-8888="2|1:0|10:1615192028|23:username-localhost-8888|44:NzUzYTlkOWE5NGZhNDJiNjkzOTE3ZDVmOWI2Mjk5MDg=|63129581ad6ea827e832082af1aee9b7920a1bf8a60a09ec09b1af6ff892c236"
 
 
-2021-03-03 20:49:56,035 - app - INFO - File: exists
-2021-03-03 20:49:56,035 - app - INFO - File: name = pgws.png
-2021-03-03 20:49:56,035 - app - INFO - File: exists | Format: matching
-2021-03-03 20:51:20,938 - app - INFO - All processes completed: 84.90283846855164
-2021-03-03 20:54:47,780 - app - INFO - POST: success
-2021-03-03 20:54:47,780 - app - INFO - # of files in request: 1
-2021-03-03 20:54:47,780 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 30157
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=37a90ea3-e660-4e91-a8c0-3dc1d8e36249
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
+2021-03-08 16:32:02,172 - app - INFO - File: exists
+2021-03-08 16:32:02,172 - app - INFO - File: name = happybday.PNG
+2021-03-08 16:32:02,172 - app - INFO - File: exists | Format: matching
+2021-03-08 16:32:05,417 - app - ERROR - ERROR: prediction exceptionExpected Ptr<cv::UMat> for argument 'src'
+2021-03-08 16:32:05,807 - app - ERROR - Traceback (most recent call last):
+  File "app.py", line 101, in predict
+    all_predictions = model.predict(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\ml_model.py", line 58, in predict
+    segmented_staves = Slice(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\slicer.py", line 63, in Slice
+    ret, mat = binarize_image2(pill)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\commonfunctions.py", line 70, in binarize_image2
+    ret3, bin_img = cv2.threshold(img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+TypeError: Expected Ptr<cv::UMat> for argument 'src'
+
+2021-03-08 16:36:00,837 - app - INFO - POST: success
+2021-03-08 16:36:00,963 - app - INFO - # of files in request: 1
+2021-03-08 16:36:00,963 - app - INFO - Host: localhost:5000
+Connection: keep-alive
+Content-Length: 25985
+Cache-Control: max-age=0
+Sec-Ch-Ua: "Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Upgrade-Insecure-Requests: 1
+Origin: http://localhost:5000
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryEyXy3GN86U0h5Odd
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: username-localhost-8889="2|1:0|10:1613749685|23:username-localhost-8889|44:ZDM3ZDc3YTUyNDE1NDFlMWE2ZmMyNmU1YTgwZWZmNGM=|99d0c6ad14108bd322ecb8bc116a3d6824612c71539e7642e77cba935b5c810c"; _xsrf=2|9e09c60d|671b43550472c70a2c60012cbf10b0db|1614128792; username-localhost-8888="2|1:0|10:1615192412|23:username-localhost-8888|44:MGVlYWYwODVjN2VmNGEzMGE3ZmNkMDY2M2YzNmQ2NTU=|e2521ccd40bd8bd9831fdf5abf4521025467bb5289530f2176d33e2127ddb36c"
 
 
-2021-03-03 20:54:47,780 - app - INFO - File: exists
-2021-03-03 20:54:47,780 - app - INFO - File: name = wishyoumerry.png
-2021-03-03 20:54:47,780 - app - INFO - File: exists | Format: matching
-2021-03-03 20:55:46,730 - app - INFO - All processes completed: 58.94977569580078
-2021-03-03 21:10:59,797 - app - INFO - POST: success
-2021-03-03 21:10:59,797 - app - INFO - # of files in request: 1
-2021-03-03 21:10:59,798 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 27758
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=c7ef10d7-5863-4521-8db3-3de60398b5ee
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
+2021-03-08 16:36:00,963 - app - INFO - File: exists
+2021-03-08 16:36:00,963 - app - INFO - File: name = happybday.PNG
+2021-03-08 16:36:00,963 - app - INFO - File: exists | Format: matching
+2021-03-08 16:36:19,358 - app - ERROR - ERROR: prediction exceptiontile cannot extend outside image
+2021-03-08 16:36:20,092 - app - ERROR - Traceback (most recent call last):
+  File "C:\Users\aroue\anaconda3\lib\site-packages\PIL\ImageFile.py", line 510, in _save
+    fh = fp.fileno()
+AttributeError: '_idat' object has no attribute 'fileno'
 
-2021-03-03 21:10:59,798 - app - INFO - File: exists
-2021-03-03 21:10:59,798 - app - INFO - File: name = silentnight.png
-2021-03-03 21:10:59,798 - app - INFO - File: exists | Format: matching
-2021-03-03 21:12:31,795 - app - INFO - All processes completed: 91.99669337272644
-2021-03-03 21:14:25,995 - app - INFO - POST: success
-2021-03-03 21:14:25,996 - app - INFO - # of files in request: 1
-2021-03-03 21:14:25,996 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 27758
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=3ce636fd-c04c-401a-9fda-17bed60b98fe
-X-Forwarded-For: 180.191.234.173
-X-Forwarded-Proto: https
-
+During handling of the above exception, another exception occurred:
 
-2021-03-03 21:14:25,996 - app - INFO - File: exists
-2021-03-03 21:14:25,996 - app - INFO - File: name = silentnight.png
-2021-03-03 21:14:25,996 - app - INFO - File: exists | Format: matching
-2021-03-03 21:15:51,687 - app - INFO - All processes completed: 85.69135427474976
-2021-03-03 21:18:07,728 - app - INFO - POST: success
-2021-03-03 21:18:07,728 - app - INFO - # of files in request: 1
-2021-03-03 21:18:07,728 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 56704
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=b30444db-eac3-4760-9da3-ac667f02b1d8
-X-Forwarded-For: 180.191.234.173
-X-Forwarded-Proto: https
-
+Traceback (most recent call last):
+  File "app.py", line 101, in predict
+    all_predictions = model.predict(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\ml_model.py", line 58, in predict
+    segmented_staves = Slice(cv_img)
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\slicer.py", line 72, in Slice
+    show_images([imgs_with_staff[0]])
+  File "C:\Users\aroue\Downloads\Documents\@ML\notable-server\segmenter\commonfunctions.py", line 94, in show_images
+    plt.imsave('test.png', image, cmap = plt.cm.gray)
+  File "C:\Users\aroue\anaconda3\lib\site-packages\matplotlib\pyplot.py", line 2251, in imsave
+    return matplotlib.image.imsave(fname, arr, **kwargs)
+  File "C:\Users\aroue\anaconda3\lib\site-packages\matplotlib\image.py", line 1605, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Users\aroue\anaconda3\lib\site-packages\PIL\Image.py", line 2151, in save
+    save_handler(self, fp, filename)
+  File "C:\Users\aroue\anaconda3\lib\site-packages\PIL\PngImagePlugin.py", line 1339, in _save
+    ImageFile._save(im, _idat(fp, chunk), [("zip", (0, 0) + im.size, 0, rawmode)])
+  File "C:\Users\aroue\anaconda3\lib\site-packages\PIL\ImageFile.py", line 518, in _save
+    e.setimage(im.im, b)
+SystemError: tile cannot extend outside image
 
-2021-03-03 21:18:07,729 - app - INFO - File: exists
-2021-03-03 21:18:07,729 - app - INFO - File: name = holynight.png
-2021-03-03 21:18:07,729 - app - INFO - File: exists | Format: matching
-2021-03-03 21:24:07,906 - app - INFO - All processes completed: 360.1767499446869
-2021-03-03 21:28:53,460 - app - INFO - POST: success
-2021-03-03 21:28:53,460 - app - INFO - # of files in request: 1
-2021-03-03 21:28:53,460 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 30157
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=1f5d773a-3d82-44fd-875a-040b8e4b8712
-X-Forwarded-For: 180.191.234.173
-X-Forwarded-Proto: https
-
-
-2021-03-03 21:28:53,460 - app - INFO - File: exists
-2021-03-03 21:28:53,460 - app - INFO - File: name = wishyoumerry.png
-2021-03-03 21:28:53,460 - app - INFO - File: exists | Format: matching
-2021-03-03 21:29:53,482 - app - INFO - All processes completed: 60.02150058746338
-2021-03-03 21:37:24,777 - app - INFO - POST: success
-2021-03-03 21:37:24,777 - app - INFO - # of files in request: 1
-2021-03-03 21:37:24,777 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 594535
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=0d19e732-e512-4f3f-a92b-4fe4cbac92b4
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
-
-2021-03-03 21:37:24,777 - app - INFO - File: exists
-2021-03-03 21:37:24,778 - app - INFO - File: name = joy_c.jpg
-2021-03-03 21:37:24,778 - app - INFO - File: exists | Format: matching
-2021-03-03 21:38:48,483 - app - INFO - All processes completed: 83.705491065979
-2021-03-03 21:44:46,586 - app - INFO - POST: success
-2021-03-03 21:44:46,586 - app - INFO - # of files in request: 1
-2021-03-03 21:44:46,586 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 30157
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=8f51f119-1a89-49d2-adac-6faa32002100
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
-
-2021-03-03 21:44:46,586 - app - INFO - File: exists
-2021-03-03 21:44:46,586 - app - INFO - File: name = wishyoumerry.png
-2021-03-03 21:44:46,586 - app - INFO - File: exists | Format: matching
-2021-03-03 21:45:45,343 - app - INFO - All processes completed: 58.75675678253174
-2021-03-03 22:03:22,849 - app - INFO - POST: success
-2021-03-03 22:03:22,850 - app - INFO - # of files in request: 1
-2021-03-03 22:03:22,850 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 26207
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=1039e8aa-5f51-496d-9ef8-df4b7daabb84
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
-
-2021-03-03 22:03:22,850 - app - INFO - File: exists
-2021-03-03 22:03:22,850 - app - INFO - File: name = happybday.PNG
-2021-03-03 22:03:22,850 - app - INFO - File: exists | Format: matching
-2021-03-03 22:03:54,406 - app - INFO - All processes completed: 31.556253910064697
-2021-03-03 22:08:34,247 - app - INFO - POST: success
-2021-03-03 22:08:34,247 - app - INFO - # of files in request: 1
-2021-03-03 22:08:34,247 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 27758
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=fcfd6dce-726e-4654-ba9e-20ad8a9d7d16
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
-
-2021-03-03 22:08:34,248 - app - INFO - File: exists
-2021-03-03 22:08:34,248 - app - INFO - File: name = silentnight.png
-2021-03-03 22:08:34,248 - app - INFO - File: exists | Format: matching
-2021-03-03 22:09:58,650 - app - INFO - All processes completed: 84.40254855155945
-2021-03-03 22:13:00,457 - app - INFO - POST: success
-2021-03-03 22:13:00,457 - app - INFO - # of files in request: 1
-2021-03-03 22:13:00,457 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 26207
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=e803877d-3884-48ea-9cbd-8922f96ada8d
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
-
-2021-03-03 22:13:00,457 - app - INFO - File: exists
-2021-03-03 22:13:00,458 - app - INFO - File: name = happybday.PNG
-2021-03-03 22:13:00,458 - app - INFO - File: exists | Format: matching
-2021-03-03 22:13:31,863 - app - INFO - All processes completed: 31.403212547302246
-2021-03-03 22:26:58,220 - app - INFO - POST: success
-2021-03-03 22:26:58,220 - app - INFO - # of files in request: 1
-2021-03-03 22:26:58,220 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 30157
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=0c8e540f-c962-4982-9d3f-172eb99ab66a
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
-
-2021-03-03 22:26:58,220 - app - INFO - File: exists
-2021-03-03 22:26:58,220 - app - INFO - File: name = wishyoumerry.png
-2021-03-03 22:26:58,220 - app - INFO - File: exists | Format: matching
-2021-03-03 22:27:55,751 - app - INFO - All processes completed: 57.530661821365356
-2021-03-03 22:31:04,037 - app - INFO - POST: success
-2021-03-03 22:31:04,037 - app - INFO - # of files in request: 1
-2021-03-03 22:31:04,038 - app - INFO - Host: e47fbc9444fd.ngrok.io
-User-Agent: okhttp/5.0.0-alpha.2
-Content-Length: 544510
-Accept-Encoding: gzip
-Content-Type: multipart/form-data; boundary=da830765-bd1a-4f5b-964a-7d2d0e72e9bd
-X-Forwarded-For: 2001:4451:a2f:fc00:549a:e775:4b80:2d10
-X-Forwarded-Proto: https
-
-
-2021-03-03 22:31:04,038 - app - INFO - File: exists
-2021-03-03 22:31:04,038 - app - INFO - File: name = odetojoy.png
+2021-03-08 16:46:05,912 - app - INFO - POST: success
+2021-03-08 16:46:05,966 - app - INFO - # of files in request: 1

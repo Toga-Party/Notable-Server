@@ -11,7 +11,6 @@ import pickle
 import shutil
 import numpy as np
 from .box import Box
-#from .fit import predict
 from .connected_componentes import  *
 from .pre_processing import *
 from .commonfunctions import *
@@ -20,9 +19,9 @@ import logging
 import skimage.io as io
 from PIL import Image
 from wand.image import Image
-from .segmenter import Segmenter
-from wand.display import display
+#from wand.display import display
 from pathlib import Path
+from .segmenter import Segmenter
 from imutils import resize as im_resize
 from scipy.ndimage import binary_fill_holes
 from skimage.morphology import skeletonize, thin
@@ -50,12 +49,12 @@ def Slice(cv_img):
         logging.error(traceback.format_exc())   
         logging.error("CV: read error")
         return
-    cv2.imwrite('test2.jpg', imgmat)
+    #imgmat = np.asarray(cv_img)
     logging.info("SLICER: beginning segmentation " + str(time.time() - start_time)) 
     imgmat = get_thresholded(imgmat, threshold_otsu(imgmat))
     segmenter = Segmenter(imgmat)
     imgs_with_staff = segmenter.regions_with_staff
-    show_images([imgs_with_staff[0]])
+    #show_images([imgs_with_staff[0]])
     mypath = Path().absolute()
     file_path = str(mypath) + '\\segmenter\\output\\'
     zip_path = str(mypath) + '\\data\\melody\\'

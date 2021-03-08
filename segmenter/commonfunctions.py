@@ -25,8 +25,6 @@ def copy(src, dst):
 def crop_image(input_image, output_image, start_x, start_y, width, height):
     """Pass input name image, output name image, x coordinate to start croping, y coordinate to start croping, width to crop, height to crop """
     input_img = Image.open(input_image)
-    
-    
     box = (start_x, start_y, start_x + width, start_y + height)
     cropped_img = input_img.crop(box)
     
@@ -64,6 +62,10 @@ def crop(path):
 def binarize_image(img):
     mat = cv2.imdecode(img, cv2.IMREAD_UNCHANGED)
     ret3, bin_img = cv2.threshold(mat,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+    return cv2.imencode(".jpg", bin_img)
+def binarize_image2(img):
+    #mat = cv2.imdecode(img, cv2.IMREAD_UNCHANGED)
+    ret3, bin_img = cv2.threshold(img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
     return cv2.imencode(".jpg", bin_img)
 
 def make_image(data, outputname, size=(128, 200), dpi=80):
